@@ -40,6 +40,9 @@ public class frmMain extends javax.swing.JFrame {
         jPanel2 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
+        jLabel12 = new javax.swing.JLabel();
+        jLabel13 = new javax.swing.JLabel();
+        jLabel14 = new javax.swing.JLabel();
         jPanel3 = new javax.swing.JPanel();
         jLabel3 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
@@ -82,6 +85,7 @@ public class frmMain extends javax.swing.JFrame {
         );
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setBackground(new java.awt.Color(255, 255, 255));
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jPanel2.setBackground(new java.awt.Color(255, 0, 51));
@@ -90,14 +94,29 @@ public class frmMain extends javax.swing.JFrame {
         jLabel1.setFont(new java.awt.Font("Times New Roman", 1, 15)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(255, 255, 255));
         jLabel1.setText("FORM BIDOATA SISWA SMK TELKOM MALANG ");
-        jPanel2.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 11, -1, -1));
+        jPanel2.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 30, -1, -1));
 
         jLabel2.setFont(new java.awt.Font("Times New Roman", 0, 11)); // NOI18N
         jLabel2.setForeground(new java.awt.Color(255, 255, 255));
         jLabel2.setText("The Real Informatic Schools");
-        jPanel2.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 40, -1, -1));
+        jPanel2.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 60, -1, -1));
 
-        getContentPane().add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 830, 80));
+        jLabel12.setFont(new java.awt.Font("Times New Roman", 0, 11)); // NOI18N
+        jLabel12.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel12.setText("The Real Informatic Schools");
+        jPanel2.add(jLabel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, -1, -1));
+
+        jLabel13.setFont(new java.awt.Font("Times New Roman", 0, 11)); // NOI18N
+        jLabel13.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel13.setText("The Real Informatic Schools");
+        jPanel2.add(jLabel13, new org.netbeans.lib.awtextra.AbsoluteConstraints(770, 60, -1, -1));
+
+        jLabel14.setFont(new java.awt.Font("Times New Roman", 0, 11)); // NOI18N
+        jLabel14.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel14.setText("The Real Informatic Schools");
+        jPanel2.add(jLabel14, new org.netbeans.lib.awtextra.AbsoluteConstraints(770, 10, -1, -1));
+
+        getContentPane().add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 910, 80));
 
         jPanel3.setBackground(new java.awt.Color(204, 204, 255));
         jPanel3.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -152,7 +171,7 @@ public class frmMain extends javax.swing.JFrame {
         taAlamat.setRows(5);
         jScrollPane1.setViewportView(taAlamat);
 
-        jPanel3.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 450, -1, 80));
+        jPanel3.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 450, 180, 80));
 
         jLabel10.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
         jLabel10.setText("Nama Siswa");
@@ -167,6 +186,7 @@ public class frmMain extends javax.swing.JFrame {
         getContentPane().add(jPanel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 90, 210, 540));
 
         jPanel4.setBackground(new java.awt.Color(153, 153, 153));
+        jPanel4.setBorder(javax.swing.BorderFactory.createCompoundBorder(javax.swing.BorderFactory.createCompoundBorder(), javax.swing.BorderFactory.createCompoundBorder()));
         jPanel4.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         bEdit.setText("Edit");
@@ -175,7 +195,7 @@ public class frmMain extends javax.swing.JFrame {
                 bEditActionPerformed(evt);
             }
         });
-        jPanel4.add(bEdit, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 10, -1, -1));
+        jPanel4.add(bEdit, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 20, -1, -1));
 
         bSave.setBackground(new java.awt.Color(255, 255, 255));
         bSave.setText("Save");
@@ -184,7 +204,7 @@ public class frmMain extends javax.swing.JFrame {
                 bSaveActionPerformed(evt);
             }
         });
-        jPanel4.add(bSave, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 10, -1, -1));
+        jPanel4.add(bSave, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 20, -1, -1));
 
         bDel.setText("Delete");
         bDel.addActionListener(new java.awt.event.ActionListener() {
@@ -192,7 +212,7 @@ public class frmMain extends javax.swing.JFrame {
                 bDelActionPerformed(evt);
             }
         });
-        jPanel4.add(bDel, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 10, -1, -1));
+        jPanel4.add(bDel, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 20, -1, -1));
 
         bClear.setText("Clear");
         bClear.addActionListener(new java.awt.event.ActionListener() {
@@ -200,7 +220,7 @@ public class frmMain extends javax.swing.JFrame {
                 bClearActionPerformed(evt);
             }
         });
-        jPanel4.add(bClear, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 10, -1, -1));
+        jPanel4.add(bClear, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 20, -1, -1));
 
         bRefresh.setText("Refresh");
         bRefresh.addActionListener(new java.awt.event.ActionListener() {
@@ -208,9 +228,9 @@ public class frmMain extends javax.swing.JFrame {
                 bRefreshActionPerformed(evt);
             }
         });
-        jPanel4.add(bRefresh, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 10, -1, -1));
+        jPanel4.add(bRefresh, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 20, -1, -1));
 
-        getContentPane().add(jPanel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 90, 590, 60));
+        getContentPane().add(jPanel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 90, 590, 60));
 
         jPanel5.setBackground(new java.awt.Color(204, 204, 255));
         jPanel5.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -226,11 +246,16 @@ public class frmMain extends javax.swing.JFrame {
                 "NIS", "NamaSiswa", "AsalSMP", "JenisKelamin", "Kelas", "Email", "NoTelp", "Alamat"
             }
         ));
+        tb1Data.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                tb1DataMouseClicked(evt);
+            }
+        });
         jScrollPane2.setViewportView(tb1Data);
 
-        jPanel5.add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 70, 570, 290));
+        jPanel5.add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 60, 620, 290));
 
-        getContentPane().add(jPanel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 160, 590, 470));
+        getContentPane().add(jPanel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 160, 650, 470));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -251,7 +276,7 @@ public class frmMain extends javax.swing.JFrame {
                     + "VALUES('"+etNIS.getText()+"','"+etNama.getText()+"','"+etSMP.getText()+"','"+JK+"','"+etKelas.getText()+"','"+etEmail.getText()+"','"+etTelp.getText()+"','"+taAlamat.getText()+"')";
             int status = KoneksiDB.execute(SQL);
             if (status == 1){
-                JOptionPane.showMessageDialog(this, "Data berhasil ditambahkan", "Sukses", JOptionPane.INFORMATION_MESSAGE);
+                JOptionPane.showMessageDialog(this, "Data berhasil diedit", "Sukses", JOptionPane.INFORMATION_MESSAGE);
                 selectData();
             }else {
                 JOptionPane.showMessageDialog(this,"Data gagal ditambahkan","Gagal",JOptionPane.WARNING_MESSAGE);
@@ -283,7 +308,9 @@ public class frmMain extends javax.swing.JFrame {
         etTelp.setText("");
         buttonGroup1.clearSelection();
         taAlamat.setText("");
-        
+        etTelp.setText("");
+        etNama.setText("");
+       
     }//GEN-LAST:event_bClearActionPerformed
 
     private void bRefreshActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bRefreshActionPerformed
@@ -315,7 +342,7 @@ public class frmMain extends javax.swing.JFrame {
                 selectData();
                 
             } else {
-                JOptionPane.showMessageDialog(this, "Data gagl diupdate","Sukses", JOptionPane.WARNING_MESSAGE);
+                JOptionPane.showMessageDialog(this, "Data gagal diupdate","Sukses", JOptionPane.WARNING_MESSAGE);
             }
         }
     }//GEN-LAST:event_bEditActionPerformed
@@ -323,8 +350,15 @@ public class frmMain extends javax.swing.JFrame {
     private void etSMPActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_etSMPActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_etSMPActionPerformed
+
+    private void tb1DataMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tb1DataMouseClicked
+
+
+
+        // TODO add your handling code here:
+    }//GEN-LAST:event_tb1DataMouseClicked
         public void selectData(){
-            String kolom[] = {"NIS","NamaSiswa","JenisKelamin","Kelas","Email","Alamat"};
+            String kolom[] = {"NIS","NamaSiswa","AsalSMP","JenisKelamin","Kelas","Email","NoTelp","Alamat"};
             DefaultTableModel dtm = new DefaultTableModel(null,kolom);
             String SQL = "SELECT * FROM t_siswa";
             ResultSet rs = KoneksiDB.executeQuery(SQL);
@@ -332,16 +366,18 @@ public class frmMain extends javax.swing.JFrame {
                 while(rs.next()) {
                     String NIS = rs.getString(1);
                     String NamaSiswa = rs.getString(2);
+                    String AsalSMP = rs.getString(3);
                     String JenisKelamin = "";
-                    if ("L".equals(rs.getString(3))) {
+                    if ("L".equals(rs.getString(4))) {
                         JenisKelamin = "Laki-Laki";
                     } else {
                         JenisKelamin = "Perempuan";
                     }
-                    String Kelas = rs.getString(4);
-                    String Email = rs.getString(5);
-                    String Alamat = rs.getString(6);
-                    String data[] = {NIS,NamaSiswa,JenisKelamin,Kelas,Email,Alamat};
+                     String Kelas = rs.getString(5);
+                    String Email = rs.getString(6);
+                    String NoTelp = rs.getString(7);
+                    String Alamat = rs.getString(8);
+                    String data[] = {NIS,NamaSiswa,AsalSMP,JenisKelamin,Kelas,Email,NoTelp,Alamat};
                     dtm.addRow(data);
                 }
             } catch (SQLException ex) {
@@ -401,6 +437,9 @@ public class frmMain extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
+    private javax.swing.JLabel jLabel12;
+    private javax.swing.JLabel jLabel13;
+    private javax.swing.JLabel jLabel14;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
@@ -421,6 +460,6 @@ public class frmMain extends javax.swing.JFrame {
     private javax.swing.JTextArea taAlamat;
     private javax.swing.JTable tb1Data;
     // End of variables declaration//GEN-END:variables
-
+            
   
 }

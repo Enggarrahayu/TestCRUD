@@ -38,28 +38,30 @@ public class Login extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        uname = new javax.swing.JTextField();
         jPanel1 = new javax.swing.JPanel();
-        psswd = new javax.swing.JTextField();
+        etPass = new javax.swing.JTextField();
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
         su = new javax.swing.JButton();
         ex = new javax.swing.JButton();
         si = new javax.swing.JButton();
+        etNama = new javax.swing.JTextField();
+        jPanel2 = new javax.swing.JPanel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-        getContentPane().add(uname, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 100, 140, -1));
 
         jPanel1.setBackground(new java.awt.Color(255, 153, 153));
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-        jPanel1.add(psswd, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 180, 140, 20));
+        jPanel1.add(etPass, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 180, 140, 30));
 
         jLabel1.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
+        jLabel1.setForeground(new java.awt.Color(0, 51, 255));
         jLabel1.setText("Username");
-        jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 80, -1, -1));
+        jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 60, -1, -1));
 
         jLabel2.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
+        jLabel2.setForeground(new java.awt.Color(0, 51, 204));
         jLabel2.setText("Password");
         jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 160, -1, -1));
 
@@ -81,6 +83,10 @@ public class Login extends javax.swing.JFrame {
             }
         });
         jPanel1.add(si, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 230, -1, -1));
+        jPanel1.add(etNama, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 80, 140, 30));
+
+        jPanel2.setBackground(new java.awt.Color(255, 204, 255));
+        jPanel1.add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 400, 140));
 
         getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 400, 300));
 
@@ -91,21 +97,21 @@ public class Login extends javax.swing.JFrame {
         Connection connection;
         PreparedStatement ps;
         try{
-            connection = (Connection) DriverManager.getConnection("jdbc:mysql://localhost:3306/db_testkoneksi?zeroDateTimeBehavior=convertToNull",
+            connection = (Connection) DriverManager.getConnection("jdbc:mysql://localhost:3306/testkoneksi?zeroDateTimeBehavior=convertToNull",
                     "root","");
-            ps = (PreparedStatement) connection.prepareStatement("SELECT 'username', 'password' FROM tb_akun WHERE 'username' = ? AND 'password'=?");
-            ps.setString(1, uname.getText());
-            ps.setString(2, psswd.getText());
+            ps = (PreparedStatement) connection.prepareStatement("SELECT * FROM `tb_akun` WHERE username = ? AND password=?");
+            ps.setString(1, etNama.getText());
+            ps.setString(2, etPass.getText());
             ResultSet result = ps.executeQuery();
             if (result.next()) {
-                new Login().show();
+                new frmMain().show();
                 this.dispose();
                 
             }
             else{
                 JOptionPane.showMessageDialog(rootPane,"Salah!");
-                psswd.setText("");
-                uname.requestFocus();
+                etPass.setText("");
+                etNama.requestFocus();
             }
         } catch (SQLException ex) {
             JOptionPane.showMessageDialog(rootPane, "gagal");
@@ -116,17 +122,17 @@ public class Login extends javax.swing.JFrame {
     }//GEN-LAST:event_siActionPerformed
 
     private void suActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_suActionPerformed
-        String username = uname.getText();
-        String password = psswd.getText();
+       String username = etNama.getText();
+        String password = etPass.getText();
         
         try{
-            try(Statement statement = (Statement) file_koneksi.GetConnection().createStatement()) {
-                statement.executeUpdate("insert into tb_akun(username, password) VALUES ('"+username+"','"+password+"');");
-            } 
-            JOptionPane.showMessageDialog(null, "Selamat! Anda berhasil Sign Up !");
-        } catch (Exception t) {
-              JOptionPane.showMessageDialog(null, "Mohon maaf, ulangi lagi prosedur");
+            try (java.sql.Statement statement = (java.sql.Statement) file_koneksi.GetConnection().createStatement()){
+                 statement.executeUpdate("INSERT INTO tb_akun(username,password) VALUES ('"+username+"','"+password+"');");
             }
+            JOptionPane.showMessageDialog(null, "Selamat! anda berhasil sign Up!");
+        }catch (Exception t){
+            JOptionPane.showMessageDialog(null,"Mohon maaf, mohon ulangi lagi prosedur");
+        }
     }//GEN-LAST:event_suActionPerformed
 
     /**
@@ -155,7 +161,6 @@ public class Login extends javax.swing.JFrame {
             java.util.logging.Logger.getLogger(Login.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
         //</editor-fold>
-        //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
@@ -166,13 +171,14 @@ public class Login extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JTextField etNama;
+    private javax.swing.JTextField etPass;
     private javax.swing.JButton ex;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JPanel jPanel1;
-    private javax.swing.JTextField psswd;
+    private javax.swing.JPanel jPanel2;
     private javax.swing.JButton si;
     private javax.swing.JButton su;
-    private javax.swing.JTextField uname;
     // End of variables declaration//GEN-END:variables
 }
